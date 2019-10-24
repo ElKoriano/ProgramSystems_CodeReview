@@ -1,5 +1,9 @@
 import math
 
+
+
+DEFAULT_COUNT_OF_COINS=1000000
+
 class Coord2D(object):
 
     def __init__(self, x=0, y=0):
@@ -31,7 +35,7 @@ class Countries(object):
         self.country_dict={}
         self.__recur_pointer=[]
 
-    def add_country(self,name,left_down_coords,right_up_coords,count_of_coins=1000000):
+    def add_country(self,name,left_down_coords,right_up_coords,count_of_coins=DEFAULT_COUNT_OF_COINS):
         for country in self.country_dict:
             for c in self.country_dict[country]:
                 if ((c[0].X>=left_down_coords.X and c[0].X<=right_up_coords.X
@@ -58,16 +62,6 @@ class Countries(object):
         for country in self.country_dict:
             for c in self.country_dict[country]:
                 if c[0].X<=town.coords.X and c[1].X>=town.coords.X and c[1].Y>=town.coords.Y and c[0].Y<=town.coords.Y:
-                    return country
-        return None
-
-    def __get_towns_country_by_town_index(self, town_index):
-        for country in self.country_dict:
-            for c in self.country_dict[country]:
-                if (c[0].X<=self.town_list[town_index].coords.X
-                    and c[1].X>=self.town_list[town_index].coords.X
-                    and c[1].Y>=self.town_list[town_index].coords.Y
-                    and c[0].Y<=self.town_list[town_index].coords.Y):
                     return country
         return None
 
