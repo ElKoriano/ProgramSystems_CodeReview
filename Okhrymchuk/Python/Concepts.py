@@ -1,7 +1,6 @@
 import math
 
 
-
 DEFAULT_COUNT_OF_COINS=1000000
 
 class Coord2D(object):
