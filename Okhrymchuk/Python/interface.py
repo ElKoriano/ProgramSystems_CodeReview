@@ -18,6 +18,12 @@ class Interface(object):
             print("Input name and position of country:")
             country_description=str.split(input())
             try:
+                if (int(country_description[1])<1 or int(country_description[1])>10
+                    or int(country_description[2])<1 or int(country_description[2])>10
+                    or int(country_description[3])<1 or int(country_description[3])>10
+                    or int(country_description[4])<1 or int(country_description[4])>10):
+                    print("wrong input, try again")
+                    return False
                 if not countries.add_country(country_description[0],
                                             Coord2D(int(country_description[1]),int(country_description[2])),
                                             Coord2D(int(country_description[3]),int(country_description[4]))):
