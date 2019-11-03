@@ -14,6 +14,7 @@ class Interface(object):
             count_of_countries=int(input())
         except:
             print("wrong input")
+            return False
         for i in range(count_of_countries):
             print("Input name and position of country:")
             country_description=str.split(input())
@@ -28,12 +29,13 @@ class Interface(object):
                                             Coord2D(int(country_description[1]),int(country_description[2])),
                                             Coord2D(int(country_description[3]),int(country_description[4]))):
                         countries.clear()
-                        print("wrong input, try again")
+                        print("wrong input format")
                         return False
             except:
-                print("wrong country format input")
+                print("wrong country input format")
+                return False
         if not countries.check_rules():
-            print("wrong rules")
+            print("wrong input format")
             return False
         print("Your result:")
         iterator = 0
