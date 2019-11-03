@@ -28,9 +28,9 @@ class Interface(object):
                 if not countries.add_country(country_description[0],
                                             Coord2D(int(country_description[1]),int(country_description[2])),
                                             Coord2D(int(country_description[3]),int(country_description[4]))):
-                        countries.clear()
-                        print("wrong input format")
-                        return False
+                    countries.clear()
+                    print("wrong input format")
+                    return False
             except:
                 print("wrong country input format")
                 return False
